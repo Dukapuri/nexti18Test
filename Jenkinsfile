@@ -47,11 +47,9 @@ pipeline {
             steps {
                 echo '🚀 배포 시작...'
                 sh """
-                    cd ${COMPOSE_PROJECT_DIR}
+                    docker rm -f nextjs || true
 
-                    # nextjs 컨테이너만 재시작 (nginx, jenkins는 유지)
-                    docker-compose stop nextjs
-                    docker-compose rm -f nextjs
+                    cd ${COMPOSE_PROJECT_DIR}
                     docker-compose up -d nextjs
                 """
             }
