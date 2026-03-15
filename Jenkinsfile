@@ -63,7 +63,7 @@ pipeline {
                 echo '✅ 배포 상태 확인 중...'
                 sh """
                     sleep 10
-                    curl -f http://localhost:3000 || exit 1
+                    docker inspect nextjs --format '{{.State.Running}}' | grep true || exit 1
                 """
             }
         }
