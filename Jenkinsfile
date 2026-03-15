@@ -11,7 +11,7 @@ pipeline {
         DOCKER_TAG = "${BUILD_NUMBER}"
 
         // docker-compose 파일 경로 (Jenkins 워크스페이스 기준)
-        COMPOSE_PROJECT_DIR = '/Users/hwangseongtae/next-infra-test'  // 실제 경로로 변경
+        COMPOSE_PROJECT_DIR = '/home/project'  // 실제 경로로 변경
     }
 
     stages {
